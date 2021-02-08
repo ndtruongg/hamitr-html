@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Search</title>
+    <link rel="stylesheet" href="./style/style.css">
+    <link rel="stylesheet" href="./style/index.min.css">
+</head>
+<body>
+    <div class="layout">
+        <div class="content" id="content">
+            <div class="search">
+                <form class="form">
+                    <div class="icon">
+                        <img src="./img/loupe.svg" alt="search icon" />
+                    </div>
+                    <input type="text" onclick="showSuggest()"/>
+                    <button>Search</button>
+                </form>
+
+                <div class="suggest" id="suggest">
+                    <div class="suggest__content">
+                        <div class="suggest__list">
+                            <ul>
+                                <li>
+                                    <div class="suggest__item">
+                                        <img src="./img/clock.svg" alt="" />
+                                        <a href="/show.html">Cong ty nghien cuu phat trien Fabbi</a>
+                                    </div>
+                                </li>
+                                <li>
+                                    <div class="suggest__item">
+                                        <img src="./img/clock.svg" alt="" />
+                                        <a href="/show.html">Edso Labs</a>
+                                    </div>
+                                </li>
+                                <li>
+                                    <div class="suggest__item">
+                                        <img src="./img/clock.svg" alt="" />
+                                        <a href="/show.html">Kinh nghiem leo nui</a>
+                                    </div>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <p class="hint" id="hint">
+                    ex. Fabbi JSC, Edso Labs, Together we can do it, ...
+                </p>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        var suggest =  document.getElementById("suggest");
+        var hint = document.getElementById("hint");
+
+        document.onclick = function (e) {
+            if (e.target.id == 'content') {
+                suggest.classList.remove('active')
+                hint.classList.remove('hide')
+            }
+        };
+
+        function showSuggest() {
+            suggest.classList.add("active")
+            hint.classList.add("hide")
+        }
+    </script>
+</body>
+</html>
